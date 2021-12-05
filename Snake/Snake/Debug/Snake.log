@@ -1,0 +1,23 @@
+﻿  Source.cpp
+Source.obj : error LNK2019: unresolved external symbol _SDL_FreeSurface referenced in function "public: void __thiscall SnakeHead::TextureLoad(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct SDL_Renderer *)" (?TextureLoad@SnakeHead@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAUSDL_Renderer@@@Z)
+Source.obj : error LNK2019: unresolved external symbol _SDL_CreateWindow referenced in function _SDL_main
+Source.obj : error LNK2019: unresolved external symbol _SDL_DestroyWindow referenced in function _SDL_main
+Source.obj : error LNK2019: unresolved external symbol _SDL_PollEvent referenced in function _SDL_main
+Source.obj : error LNK2019: unresolved external symbol _SDL_SetHint referenced in function _SDL_main
+Source.obj : error LNK2019: unresolved external symbol _SDL_CreateRenderer referenced in function _SDL_main
+Source.obj : error LNK2019: unresolved external symbol _SDL_CreateTextureFromSurface referenced in function "public: void __thiscall SnakeHead::TextureLoad(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct SDL_Renderer *)" (?TextureLoad@SnakeHead@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAUSDL_Renderer@@@Z)
+Source.obj : error LNK2019: unresolved external symbol _SDL_SetRenderDrawColor referenced in function _SDL_main
+Source.obj : error LNK2019: unresolved external symbol _SDL_RenderClear referenced in function _SDL_main
+Source.obj : error LNK2019: unresolved external symbol _SDL_RenderPresent referenced in function _SDL_main
+Source.obj : error LNK2019: unresolved external symbol _SDL_DestroyTexture referenced in function "public: __thiscall SnakeHead::~SnakeHead(void)" (??1SnakeHead@@QAE@XZ)
+Source.obj : error LNK2019: unresolved external symbol _SDL_DestroyRenderer referenced in function _SDL_main
+Source.obj : error LNK2019: unresolved external symbol _SDL_Init referenced in function _SDL_main
+Source.obj : error LNK2019: unresolved external symbol _SDL_Quit referenced in function _SDL_main
+Source.obj : error LNK2019: unresolved external symbol _IMG_Load referenced in function "public: void __thiscall SnakeHead::TextureLoad(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct SDL_Renderer *)" (?TextureLoad@SnakeHead@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAUSDL_Renderer@@@Z)
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+D:\VS libs\SDL2-2.0.16\lib\x64\SDL2.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+D:\VS libs\SDL2-2.0.16\lib\x64\SDL2main.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+D:\VS libs\SDL2_image-2.0.5\lib\x64\SDL2_image.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+D:\VS libs\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+D:\VS libs\SDL2_mixer-2.0.4\lib\x64\SDL2_mixer.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\TkachukOL\Desktop\SnakeGame\Snake\Debug\Snake.exe : fatal error LNK1120: 16 unresolved externals
