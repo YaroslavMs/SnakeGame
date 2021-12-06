@@ -45,5 +45,9 @@ public:
 		head.x += head.velx;
 		head.y += head.vely;
 	}
+	SDL_Rect HeadRect(SnakeHead head) {
+		SDL_Rect headRect{ head.x, head.y, head.width, head.height };
+		return headRect;
+	}
 };
 

@@ -1,4 +1,5 @@
 #pragma once
+#include "Functions.h"
 #include "Snake.h"
 #include "SnakeHeadManager.h"
 #include "SnakeTailManager.h"
@@ -28,6 +29,14 @@ public:
 	void SnakeClose(Snake& snake) {
 		a.HeadClose(snake.head);
 		b.TailClose(snake.tail);
+	}
+	bool TailHeadCollision(Snake snake) {
+		for (int i = 20; i < snake.tail.Length(); i++) {
+			if (Collider(a.HeadRect(snake.head), b.GetDotRect(snake.tail, i))) {
+				return true;
+			}
+		}
+		return false;
 	}
 };
 

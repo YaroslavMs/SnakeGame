@@ -21,5 +21,9 @@ public:
 		SDL_Rect rect{ dot.x, dot.y, dot.width, dot.height };
 		SDL_RenderCopy(renderer, dot.DotTexture, NULL, &rect);
 	}
+	SDL_Rect DotRect(Dot dot) {
+		SDL_Rect dotRect{ dot.x, dot.y, dot.width, dot.height };
+		return dotRect;
+	}
 };
 

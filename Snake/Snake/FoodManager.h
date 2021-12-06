@@ -26,5 +26,9 @@ public:
 		SDL_Rect rect{ food.x, food.y, food.width, food.height };
 		SDL_RenderCopy(renderer, food.FoodTexture, NULL, &rect);
 	}
+	SDL_Rect FoodRect(Food food) {
+		SDL_Rect foodRect{ food.x, food.y, food.width, food.height };
+		return foodRect;
+	}
 };
 

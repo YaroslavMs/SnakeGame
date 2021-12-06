@@ -5,7 +5,7 @@
 class SnakeTailManager
 {
 	DotManager a;
-	int X[1000], Y[1000];
+	int X[1500], Y[1500];
 public:
 	void AddLength(SnakeTail &tail, SDL_Renderer* renderer, SnakeHead &head) {
 		a.LoadDotTexture(tail.Tail[tail.length], renderer, "Dot.bmp");
@@ -68,6 +68,9 @@ public:
 			t.Tail[i].SetY(Y[i - 1]);
 		}
 
+	}
+	SDL_Rect GetDotRect(SnakeTail t, int i) {
+		return a.DotRect(t.Tail[i]);
 	}
 	
 	
