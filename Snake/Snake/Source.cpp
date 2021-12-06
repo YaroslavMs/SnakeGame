@@ -17,6 +17,7 @@ SDL_Renderer* renderer = NULL;
 SDL_Texture* MapTexture = NULL;
 SDL_Texture* Text1 = NULL;
 SDL_Texture* Text2 = NULL;
+SDL_Texture* Text3 = NULL;
 TTF_Font* font = NULL;
 
 void CreateTextTexture(std::string text, SDL_Color color, SDL_Texture*& texture, SDL_Rect& rect);
@@ -60,6 +61,7 @@ int main(int argc, char* args[]) {
 
 	SDL_Rect text1rect{ 0, ScreenHeight - 50, 0, 0 };
 	SDL_Rect text2rect{ 400, ScreenHeight - 50, 0, 0 };
+	SDL_Rect text3rect{ 450, 400, 0, 0 };
 
 
 	bool quit = false;
@@ -103,6 +105,9 @@ int main(int argc, char* args[]) {
 		SDL_RenderPresent(renderer);
 		if (mngr.TailCollision(snake) || !mngr.MapCollision(snake->GetHead(), mapCollider)) {
 			alive = false;
+			CreateTextTexture("Press Enter to restart the game", textcolor, Text3, text3rect);
+			SDL_RenderCopy(renderer, Text3, NULL, &text3rect);
+			SDL_RenderPresent(renderer);
 		}
 		while (!alive) {
 			while (SDL_PollEvent(&e) != 0)
@@ -119,6 +124,8 @@ int main(int argc, char* args[]) {
 						mngr.AddTailLength(*snake, renderer);
 					}
 					mngr.SnakeSpawn(*snake);
+					SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+					SDL_RenderClear(renderer);
 					score = 0;
 					alive = true;
 				}
@@ -141,9 +148,11 @@ int main(int argc, char* args[]) {
 	SDL_DestroyTexture(MapTexture);
 	SDL_DestroyTexture(Text1);
 	SDL_DestroyTexture(Text2);
+	SDL_DestroyTexture(Text3);
 	MapTexture = NULL;
     Text1 = NULL;
 	Text2 = NULL;
+	Text3 = NULL;
 	renderer = NULL;
 	window = NULL;
 	delete snake;
