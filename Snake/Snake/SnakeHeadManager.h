@@ -49,5 +49,9 @@ public:
 		SDL_Rect headRect{ head.x, head.y, head.width, head.height };
 		return headRect;
 	}
+	void Spawn(SnakeHead& head) {
+		head.x = 700;
+		head.y = 350;
+	}
 };
 

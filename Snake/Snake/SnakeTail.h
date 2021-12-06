@@ -3,7 +3,7 @@
 #include "Dot.h"
 class SnakeTail
 {
-	Dot Tail [1500];
+	Dot Tail [2000];
 	int length = 0;
 	friend class SnakeTailManager;
 public:

@@ -5,7 +5,7 @@
 
 class Dot
 {
-	int x = 0, y = 0, width = 0, height = 0;
+	int x = -100, y = -100, width = 0, height = 0;
 	SDL_Texture* DotTexture = NULL;
 	friend class DotManager;
 public:

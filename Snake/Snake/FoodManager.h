@@ -19,8 +19,8 @@ public:
 		screen = NULL;
 	}
 	void FoodSpawn(Food &food) {
-		food.x = rand() % 1550;
-		food.y = rand() % 850;
+		food.x = rand() % 1340;
+		food.y = rand() % 740;
 	}
 	void FoodRender(Food food, SDL_Renderer* renderer) {
 		SDL_Rect rect{ food.x, food.y, food.width, food.height };

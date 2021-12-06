@@ -9,6 +9,9 @@ class SnakeManager
 	SnakeTailManager b;
 
 public:
+	void SnakeSpawn(Snake& snake) {
+		a.Spawn(snake.head);
+	}
 	void SnakeRender(Snake &snake, SDL_Renderer* renderer) {
 		a.HeadRender(snake.head, renderer);
 		b.SnakeTailRender(snake.tail, renderer);
@@ -30,13 +33,19 @@ public:
 		a.HeadClose(snake.head);
 		b.TailClose(snake.tail);
 	}
-	bool TailHeadCollision(Snake snake) {
-		for (int i = 20; i < snake.tail.Length(); i++) {
-			if (Collider(a.HeadRect(snake.head), b.GetDotRect(snake.tail, i))) {
+	bool TailCollision(Snake *snake) {
+		for (int i = 20; i < snake->tail.Length(); i++) {
+			if (Collider(a.HeadRect(snake->head), b.GetDotRect(&(snake->tail), i))) {
 				return true;
 			}
 		}
 		return false;
+	}
+	bool MapCollision(SnakeHead head, SDL_Rect Map) {
+		return Collider(a.HeadRect(head), Map);
+	}
+	bool FoodCollision(SnakeHead head, SDL_Rect food) {
+		return Collider(a.HeadRect(head), food);
 	}
 };
 
